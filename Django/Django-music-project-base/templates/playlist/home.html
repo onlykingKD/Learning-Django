@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+</head>
+<body>
+  <h1><center>Playlists</center></h1>
+  <div class="box">
+    {% for i in my_playlists %}
+
+      <div class="card">
+
+        <a href = "{% url 'playlist' id=forloop.counter %}">
+
+          <div class="imgBx">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mb4W9ZYrm64cv-S2uAxQJ_Q1NPL4nVlJLw&usqp=CAU" alt="images">
+          </div>
+          <div class="details">
+              <h2>
+                {{i.name}}
+                <br>
+                <span>{{i.numberOfSongs}}</span>
+            </h2>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    
+  </div>
+</body>
+</html>
